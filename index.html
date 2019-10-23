@@ -15,12 +15,28 @@
     <title>Weather Dashboard</title>
   </head>
   <body>
-    <h1 class="h1">Weather Dashboard</h1>
-    <div class="row">
-    <div class="col-3">Searh field, history cities?</div>
-    <div class="col-9">
-      <div class="row-6">One city daily information</div>
-      <div class="row-6">5 days history of this city</div>
+    <h1 class="h1 bg-dark text-light text-center p-4">
+      Weather Dashboard
+    </h1>
+    <div class="row p-2">
+      <div class="col-3">
+        <label class="col-9">Search for a city:</label>
+        <div class="input-group col-9">
+          <input type="text" class="form-control" id="cityName" />
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-secondary bg-primary text-light"
+              id="searchbtn"
+            >
+              Go
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-9">
+        <div class="row-6">One city daily information</div>
+        <div class="row-6">5 days history of this city</div>
+      </div>
     </div>
   </body>
 </html>
