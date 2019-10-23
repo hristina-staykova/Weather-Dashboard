@@ -1,2 +1,2 @@
 # Weather-Dashboard
-6th &amp; 7th week @ Coding Bootcamp ESMT Berlin
+4th big assignment, homework, 6th &amp; 7th week @ Coding Bootcamp ESMT Berlin
