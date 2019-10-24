@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="javascript/script.js"></script>
     <title>Weather Dashboard</title>
   </head>
@@ -20,6 +21,7 @@
     </h1>
     <div class="row p-2">
       <div class="col-3">
+        1va kletka
         <label class="col-9">Search for a city:</label>
         <div class="input-group col-9">
           <input type="text" class="form-control" id="cityName" />
@@ -34,8 +36,22 @@
         </div>
       </div>
       <div class="col-9">
-        <div class="row-6">One city daily information</div>
-        <div class="row-6">5 days history of this city</div>
+        2ra kletka
+        <div class="row-6">
+          <h3>
+            <span id="cityNameEl">Name of the city, date</span>, picture -
+            current weather
+          </h3>
+          <p id="temperature"></p>
+          <p id="humidity"></p>
+          <p id="speed"></p>
+          <p id="uv"></p>
+          One city daily information 2ra kletka, 1vi red
+        </div>
+        <div class="row-6">
+          5 days history of this city - 5 kletki - date, temp, humidity, weather
+          picture 2ra kletka, 2ri red
+        </div>
       </div>
     </div>
   </body>
