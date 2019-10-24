@@ -26,7 +26,6 @@ $(document).ready(function() {
   }
 
   function getDailyData() {
-    $("#cityNameEl").text(cityName + " " + toDay);
     var queryURLday =
       "http://api.openweathermap.org/data/2.5/weather?q=" +
       cityName +
@@ -52,7 +51,7 @@ $(document).ready(function() {
         $("#uv").text("UV Index: " + response.value);
         indexUVcolor(response.value);
       });
-
+      $("#cityNameEl").text(response.name + " " + toDay);
       $("#temperature").text("Temperature: " + cityTemperature + " C");
       $("#humidity").text("Humidity: " + cityHumidity + "%");
       $("#speed").text("Wind Speed: " + cityWindSpeed + " MPH");
@@ -64,6 +63,7 @@ $(document).ready(function() {
         "@2x.png";
       $("#currentImage").attr("src", imageLink);
       $("#currentImage").attr("alt", response.weather[0].main);
+      $("#currentImage").attr("title", response.weather[0].main);
     });
   }
 
