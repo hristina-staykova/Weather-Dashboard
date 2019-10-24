@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var cityName = $("#cityName");
+  var cityInput = $("#cityNameInput");
   var searchButton = $("#searchbtn");
   var toDay = moment().format("DD/M/YYYY");
 
@@ -32,11 +32,6 @@ $(document).ready(function() {
       cityName +
       "&units=metric&APPID=66b38c70f7e47f3330c092ef356a429f";
 
-    var queryURLfiveDay =
-      "http://api.openweathermap.org/data/2.5/forecast?q=" +
-      cityName +
-      "&units=metric&APPID=66b38c70f7e47f3330c092ef356a429f";
-
     //calling the current weather forecast information
     $.ajax({ url: queryURLday, method: "GET" }).then(function getData(
       response
@@ -47,7 +42,7 @@ $(document).ready(function() {
       var cityLat = response.coord.lat;
       var cityLon = response.coord.lon;
 
-      //getting the UV index & display
+      //getting the UV index & display it
       var queryUVurl =
         "http://api.openweathermap.org/data/2.5/uvi?appid=66b38c70f7e47f3330c092ef356a429f&lat=" +
         cityLat +
@@ -62,7 +57,7 @@ $(document).ready(function() {
       $("#humidity").text("Humidity: " + cityHumidity + "%");
       $("#speed").text("Wind Speed: " + cityWindSpeed + " MPH");
 
-      //getting the icon and displaying it
+      //getting the icon & display it
       var imageLink =
         "http://openweathermap.org/img/wn/" +
         response.weather[0].icon +
@@ -72,16 +67,20 @@ $(document).ready(function() {
     });
   }
 
+  // function 5 day forecast information
+  // var queryURLfiveDay =
+  //     "http://api.openweathermap.org/data/2.5/forecast?q=" +
+  //     cityName +
+  //     "&units=metric&APPID=66b38c70f7e47f3330c092ef356a429f";
+  // $.ajax({ url: queryURLfiveDay, method: "GET" }).then(function getFiveDayData(
+  //   response
+  // ) {
+  //   console.log(response);
+  // });
+
   searchButton.on("click", function(event) {
     event.preventDefault();
-    cityName = cityName.val();
+    cityName = cityInput.val();
     getDailyData();
   });
 });
-
-// calling 5 day forecast information
-// $.ajax({ url: queryURLfiveDay, method: "GET" }).then(function getFiveDayData(
-//   response
-// ) {
-//   console.log(response);
-// });
