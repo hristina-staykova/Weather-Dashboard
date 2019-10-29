@@ -68,15 +68,18 @@ $(document).ready(function() {
   }
 
   // function 5 day forecast information
-  // var queryURLfiveDay =
-  //     "http://api.openweathermap.org/data/2.5/forecast?q=" +
-  //     cityName +
-  //     "&units=metric&APPID=66b38c70f7e47f3330c092ef356a429f";
-  // $.ajax({ url: queryURLfiveDay, method: "GET" }).then(function getFiveDayData(
-  //   response
-  // ) {
-  //   console.log(response);
-  // });
+  var queryURLfiveDay =
+    "http://api.openweathermap.org/data/2.5/forecast?q=" +
+    cityName +
+    "&units=metric&APPID=66b38c70f7e47f3330c092ef356a429f";
+  $.ajax({ url: queryURLfiveDay, method: "GET" }).then(function getFiveDayData(
+    response
+  ) {
+    console.log(response);
+  });
+
+  //getting the search data and save it to localStorage (I will use it later to display it under the search bar, should also display weather info when clicked)
+  function displayPastSearches() {}
 
   searchButton.on("click", function(event) {
     event.preventDefault();
